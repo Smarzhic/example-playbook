@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('First stage'){
       steps {
-        echo "I'm runing"  
+        sh 'ansible-galaxy install -r requirements.yml'
+        sh 'ansible-playbook site.yml -i inventory/prod.yml'
       }
     }
     stage('Second stage'){
