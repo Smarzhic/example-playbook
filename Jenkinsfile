@@ -7,10 +7,5 @@ pipeline {
         sh 'ansible-playbook site.yml -i inventory/prod.yml'
       }
     }
-    stage('Second stage'){
-      steps {
-        echo "And I'm too"
-      }
-    }
   }
 }
