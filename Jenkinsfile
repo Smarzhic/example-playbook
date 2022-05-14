@@ -1,5 +1,8 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+        label 'ansible_docker'
+    }
   stages {
     stage('First stage'){
       steps {
